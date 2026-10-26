@@ -1,0 +1,8 @@
+FLUXOIA COMPLETO — VERSAO MAIS RECENTE (3 ABAS + SUPERVISAO INTELIGENTE)
+
+1. Extraia o ZIP.
+2. Abra a pasta fluxoia no VS Code.
+3. Siga os comandos do README.md para instalar, treinar e iniciar.
+4. Use http://localhost:8501.
+
+O modelo treinado e o CSV nao estao no ZIP: preparar.py gera esses arquivos a partir da fonte oficial UCI na primeira execucao.

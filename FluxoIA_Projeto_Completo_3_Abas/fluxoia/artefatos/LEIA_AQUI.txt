@@ -1,0 +1,1 @@
+Os arquivos treinados serao gerados aqui por preparar.py. Nao ha um modelo ficticio neste pacote.

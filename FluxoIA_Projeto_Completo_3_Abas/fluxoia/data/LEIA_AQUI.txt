@@ -1,0 +1,1 @@
+O preparar.py baixa o CSV oficial da UCI nesta pasta na primeira execucao. Se preferir, coloque manualmente Metro_Interstate_Traffic_Volume.csv aqui.

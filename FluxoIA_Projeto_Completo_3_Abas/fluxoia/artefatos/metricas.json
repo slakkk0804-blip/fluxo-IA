@@ -1,0 +1,325 @@
+{
+  "fonte": "UCI Metro Interstate Traffic Volume (John Hogue, 2019)",
+  "dataset_url": "https://archive.ics.uci.edu/dataset/492/metro+interstate+traffic+volume",
+  "licenca": "CC BY 4.0",
+  "localidade": "I-94 sentido oeste, entre Minneapolis e St. Paul, Minnesota, EUA",
+  "origem_linhas": 48204,
+  "horas_unicas": 40575,
+  "variaveis_originais": [
+    "holiday",
+    "temp",
+    "rain_1h",
+    "snow_1h",
+    "clouds_all",
+    "weather_main",
+    "weather_description",
+    "date_time",
+    "traffic_volume"
+  ],
+  "atributos_modelo": [
+    "hora",
+    "dia_semana",
+    "mes",
+    "dia_ano",
+    "fim_semana",
+    "hora_sin",
+    "hora_cos",
+    "semana_sin",
+    "semana_cos",
+    "ano_sin",
+    "ano_cos"
+  ],
+  "periodo_de": "2012-10-02 09:00:00",
+  "periodo_ate": "2018-09-30 23:00:00",
+  "treino_n": 28402,
+  "validacao_n": 6086,
+  "teste_n": 6087,
+  "treino_fim": "2017-05-10 04:00:00",
+  "validacao_fim": "2018-01-19 14:00:00",
+  "metodo": "Divisão cronológica 70% treino, 15% validação, 15% teste; sem embaralhar.",
+  "selecionado": "Random Forest",
+  "resultados": {
+    "Baseline por dia/hora": {
+      "validacao": {
+        "mae": 285.03,
+        "rmse": 501.41,
+        "r2": 0.9349
+      },
+      "teste": {
+        "mae": 260.82,
+        "rmse": 448.08,
+        "r2": 0.9488
+      }
+    },
+    "Regressão Ridge": {
+      "validacao": {
+        "mae": 808.27,
+        "rmse": 1046.54,
+        "r2": 0.7166
+      },
+      "teste": {
+        "mae": 812.31,
+        "rmse": 1033.7,
+        "r2": 0.7273
+      }
+    },
+    "Árvore de decisão": {
+      "validacao": {
+        "mae": 267.8,
+        "rmse": 446.93,
+        "r2": 0.9483
+      },
+      "teste": {
+        "mae": 244.8,
+        "rmse": 441.92,
+        "r2": 0.9502
+      }
+    },
+    "Random Forest": {
+      "validacao": {
+        "mae": 245.48,
+        "rmse": 399.27,
+        "r2": 0.9587
+      },
+      "teste": {
+        "mae": 226.94,
+        "rmse": 406.96,
+        "r2": 0.9577
+      }
+    }
+  },
+  "arvore_profundidade_mae_validacao": {
+    "7": 281.69268510699413,
+    "11": 268.44159615799504,
+    "15": 267.80215469730996
+  },
+  "arvore_profundidade_selecionada": 15,
+  "importancia_permutacao": [
+    {
+      "variavel": "hora_cos",
+      "aumento_mae": 1298.27
+    },
+    {
+      "variavel": "hora",
+      "aumento_mae": 442.08
+    },
+    {
+      "variavel": "hora_sin",
+      "aumento_mae": 191.63
+    },
+    {
+      "variavel": "dia_semana",
+      "aumento_mae": 112.71
+    },
+    {
+      "variavel": "ano_cos",
+      "aumento_mae": 109.72
+    },
+    {
+      "variavel": "fim_semana",
+      "aumento_mae": 94.67
+    },
+    {
+      "variavel": "semana_sin",
+      "aumento_mae": 81.84
+    },
+    {
+      "variavel": "ano_sin",
+      "aumento_mae": 33.66
+    },
+    {
+      "variavel": "semana_cos",
+      "aumento_mae": 24.16
+    },
+    {
+      "variavel": "dia_ano",
+      "aumento_mae": 23.61
+    },
+    {
+      "variavel": "mes",
+      "aumento_mae": 1.03
+    }
+  ],
+  "comparacao_grupos": {
+    "periodo": [
+      {
+        "grupo": "Madrugada",
+        "n": 1511,
+        "mae": 81.23
+      },
+      {
+        "grupo": "Manhã",
+        "n": 1519,
+        "mae": 268.79
+      },
+      {
+        "grupo": "Noite",
+        "n": 1530,
+        "mae": 261.48
+      },
+      {
+        "grupo": "Tarde",
+        "n": 1527,
+        "mae": 294.87
+      }
+    ],
+    "tipo_dia": [
+      {
+        "grupo": "Dia útil",
+        "n": 4321,
+        "mae": 210.93
+      },
+      {
+        "grupo": "Fim de semana",
+        "n": 1766,
+        "mae": 266.11
+      }
+    ]
+  },
+  "simulacao_retroativa": {
+    "dias_avaliados": 254,
+    "media_veiculos_16h": 5826.0,
+    "media_veiculos_hora_sugerida": 4101.1,
+    "aviso": "Simulação retrospectiva em rodovia estrangeira; não mede economia, congestionamento ou benefício real."
+  },
+  "eda": {
+    "media_por_hora": [
+      {
+        "hora": 0,
+        "volume": 844.9
+      },
+      {
+        "hora": 1,
+        "volume": 521.3
+      },
+      {
+        "hora": 2,
+        "volume": 392.6
+      },
+      {
+        "hora": 3,
+        "volume": 373.2
+      },
+      {
+        "hora": 4,
+        "volume": 701.3
+      },
+      {
+        "hora": 5,
+        "volume": 2103.7
+      },
+      {
+        "hora": 6,
+        "volume": 4172.1
+      },
+      {
+        "hora": 7,
+        "volume": 4769.8
+      },
+      {
+        "hora": 8,
+        "volume": 4593.6
+      },
+      {
+        "hora": 9,
+        "volume": 4394.8
+      },
+      {
+        "hora": 10,
+        "volume": 4204.9
+      },
+      {
+        "hora": 11,
+        "volume": 4498.5
+      },
+      {
+        "hora": 12,
+        "volume": 4739.1
+      },
+      {
+        "hora": 13,
+        "volume": 4741.6
+      },
+      {
+        "hora": 14,
+        "volume": 4957.0
+      },
+      {
+        "hora": 15,
+        "volume": 5271.7
+      },
+      {
+        "hora": 16,
+        "volume": 5708.6
+      },
+      {
+        "hora": 17,
+        "volume": 5350.8
+      },
+      {
+        "hora": 18,
+        "volume": 4306.5
+      },
+      {
+        "hora": 19,
+        "volume": 3311.0
+      },
+      {
+        "hora": 20,
+        "volume": 2869.7
+      },
+      {
+        "hora": 21,
+        "volume": 2699.4
+      },
+      {
+        "hora": 22,
+        "volume": 2224.4
+      },
+      {
+        "hora": 23,
+        "volume": 1490.7
+      }
+    ],
+    "media_por_dia_semana": [
+      {
+        "dia": 0,
+        "volume": 3313.6
+      },
+      {
+        "dia": 1,
+        "volume": 3534.7
+      },
+      {
+        "dia": 2,
+        "volume": 3608.3
+      },
+      {
+        "dia": 3,
+        "volume": 3653.9
+      },
+      {
+        "dia": 4,
+        "volume": 3674.8
+      },
+      {
+        "dia": 5,
+        "volume": 2822.6
+      },
+      {
+        "dia": 6,
+        "volume": 2426.2
+      }
+    ],
+    "volume_medio": 3290.65,
+    "volume_minimo": 0.0,
+    "volume_maximo": 7280.0,
+    "percentual_horarios_duplicados": 15.83
+  },
+  "limitacoes": [
+    "Medições reais de trecho de rodovia dos Estados Unidos, não representam Cuiabá.",
+    "Sem dados de velocidade, volume de veículos não prova congestionamento.",
+    "Previsão usa apenas calendário; não antecipa acidentes, obras ou condições climáticas específicas.",
+    "Demonstrativo é histórico fora da amostra de treino, não previsão do trânsito ao vivo."
+  ]
+}
